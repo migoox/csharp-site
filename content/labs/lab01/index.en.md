@@ -59,8 +59,8 @@ To learn more about the states, _staging_ and other related concepts, check out 
 Your project might contain files which you may not want to commit, most notably binaries. A very useful tool at your disposal is a `.gitignore` file. As the name suggests, it is essentially a list of all project files that will be ignored when using [`git add`](https://git-scm.com/docs/git-add). 
 
 In Visual Studio, open `View -> Git Changes`. You will see a list of all changed files. 
-- To stage a file, click the `+` icon next to its name. To unstage a file, click the `–` icon. 
-- You can stage all files at once by clicking the `+` icon next to `Changes`, or unstage all with the corresponding `–` icon. 
+- To stage a file, click the `+` icon next to its name. To unstage a file, click the `--` icon. 
+- You can stage all files at once by clicking the `+` icon next to `Changes`, or unstage all with the corresponding `--` icon. 
 - Once you are done staging, enter a commit message and click the `Commit Staged` button.
 
 ![Staging](/labs/lab01/img/staging.png)
@@ -297,9 +297,9 @@ You can get the full commit hash using by clicking 3 dots in the commit panel:
 ![Commit hash](/labs/lab01/img/commit-hash.png)
 
 Previously we used [`git checkout`](https://git-scm.com/docs/git-checkout) to switch branches  (today, `git switch` is recommended for branch switching). But `git checkout` can do more: you can also check out a specific commit by providing its hash. In general, this command changes what the `HEAD` pointer refers to.  
-The *working tree*—the current version of your files—always reflects the commit that `HEAD` points to. `HEAD` can be in one of two states:
-1. **Normal state** – `HEAD` points to a branch.  The working tree always reflects the tip of that branch. You enter this state when you run `git checkout <branch-name>`.
-2. **Detached state** – `HEAD` points directly to a commit (which may or may not be the tip of a branch). You enter this state when you run `git checkout <commit>`.
+The *working tree* --- the current version of your files --- always reflects the commit that `HEAD` points to. `HEAD` can be in one of two states:
+1. **Normal state** -- `HEAD` points to a branch.  The working tree always reflects the tip of that branch. You enter this state when you run `git checkout <branch-name>`.
+2. **Detached state** -- `HEAD` points directly to a commit (which may or may not be the tip of a branch). You enter this state when you run `git checkout <commit>`.
 
 You can check your current state by invoking `git status`. If you have any uncommited work in your current working tree, a common approach before checking out, is to stash it or create a WIP (Work In Progress) commit before the checkout.
 

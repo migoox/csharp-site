@@ -3,18 +3,18 @@ title: "Lab01"
 weight: 10
 ---
 
-# git
+# Warsztaty z Git
 
 Małe projekty realizowane przez pojedynczych programistów są stosunkowo łatwe w utrzymaniu. Proste zadanie programistyczne to zwykle tylko kilkadziesiąt linii kodu, a zmiany wprowadza się po kolei, jedna po drugiej. Nawet w tak prostej sytuacji możesz jednak chcieć cofnąć część zmian. Twój projekt może też w naturalny sposób urosnąć i wymagać wielu modyfikacji rozrzuconych po różnych plikach. Czasami będziesz chciał sprawdzić nowe podejście, nie wiedząc z góry, czy nie zepsuje ono działania programu. W końcu może się też zdarzyć, że ktoś inny będzie chciał dołączyć do pracy i wprowadzać zmiany równolegle do Ciebie.
 
-Właśnie wtedy potrzebny jest **system kontroli wersji** (VCS, Version Control System). Możesz myśleć o nim jak o funkcji „historii” dla Twojego projektu, która pozwala poruszać się po różnych wersjach tego samego kodu. W tym tutorialu skupimy się na najpopularniejszym systemie VCS, **Git**, ale istnieje ich więcej (np. **Perforce** do pracy z dużymi plikami). Być może spotkałeś się już z pojęciem **GitHub** – to platforma do hostowania zdalnych repozytoriów. Ten tutorial jej nie obejmuje, ale warto wiedzieć, że GitHub to nie to samo co Git.
+Właśnie wtedy potrzebny jest **system kontroli wersji** (VCS, Version Control System). Możesz myśleć o nim jak o funkcji „historii” dla Twojego projektu, która pozwala poruszać się po różnych wersjach tego samego kodu. W tym tutorialu skupimy się na najpopularniejszym systemie VCS, **Git**, ale istnieje ich więcej (np. **Perforce** do pracy z dużymi plikami). Być może spotkałeś się już z pojęciem **GitHub** -- to platforma do hostowania zdalnych repozytoriów. Ten tutorial jej nie obejmuje, ale warto wiedzieć, że GitHub to nie to samo co Git.
 
-Możesz wykonywać zadania przy pomocy graficznego interfejsu Visual Studio lub w terminalu. Pamiętaj jednak, że Visual Studio nie wspiera wszystkich funkcji Gita – np. interaktywnych rebase’ów (o tym później). Nawet jeśli zdecydujesz się korzystać z GUI, zdecydowanie warto poznać polecenia w konsoli. Nie zawsze będziesz mieć dostęp do IDE, a w wielu przypadkach praca w terminalu jest po prostu szybsza.
+Możesz wykonywać zadania przy pomocy graficznego interfejsu Visual Studio lub w terminalu. Pamiętaj jednak, że Visual Studio nie wspiera wszystkich funkcji Gita -- np. interaktywnych rebase’ów (o tym później). Nawet jeśli zdecydujesz się korzystać z GUI, zdecydowanie warto poznać polecenia w konsoli. Nie zawsze będziesz mieć dostęp do IDE, a w wielu przypadkach praca w terminalu jest po prostu szybsza.
 
 ## Pierwsze kroki z Gitem
 
 ### Dane uwierzytelniające
-Akcje wykonywane w Gicie, takie jak commity, są powiązane z Twoją tożsamością. Ma to szczególne znaczenie przy wysyłaniu commitów do zdalnych repozytoriów, ale nawet jeśli nie planujesz tego robić, powinieneś ustawić swoje dane — nazwę użytkownika oraz adres e‑mail. Możesz to zrobić w terminalu następującymi poleceniami: [`git config --global user.name <username>`](https://git-scm.com/docs/git-config) oraz [`git config --global user.email <email>`](https://git-scm.com/docs/git-config).
+Akcje wykonywane w Gicie, takie jak commity, są powiązane z Twoją tożsamością. Ma to szczególne znaczenie przy wysyłaniu commitów do zdalnych repozytoriów, ale nawet jeśli nie planujesz tego robić, powinieneś ustawić swoje dane --- nazwę użytkownika oraz adres e‑mail. Możesz to zrobić w terminalu następującymi poleceniami: [`git config --global user.name <username>`](https://git-scm.com/docs/git-config) oraz [`git config --global user.email <email>`](https://git-scm.com/docs/git-config).
 
 W Visual Studio przejdź do `Git -> Settings` i wprowadź dane.
 
@@ -22,7 +22,7 @@ W Visual Studio przejdź do `Git -> Settings` i wprowadź dane.
 
 ### Repozytorium
 
-**Repozytorium** to miejsce, w którym przechowywane są pliki projektu oraz cała ich historia zmian. Git realizuje to za pomocą podkatalogu `.git`, w którym znajdują się wszystkie informacje potrzebne do śledzenia. Oznacza to, że usunięcie folderu `.git` powoduje utratę kontroli wersji w projekcie i pozostawia same pliki w ich ostatnim stanie — niezależnie od tego, czy były przygotowane do commita, czy nie.
+**Repozytorium** to miejsce, w którym przechowywane są pliki projektu oraz cała ich historia zmian. Git realizuje to za pomocą podkatalogu `.git`, w którym znajdują się wszystkie informacje potrzebne do śledzenia. Oznacza to, że usunięcie folderu `.git` powoduje utratę kontroli wersji w projekcie i pozostawia same pliki w ich ostatnim stanie --- niezależnie od tego, czy były przygotowane do commita, czy nie.
 
 Aby utworzyć repozytorium Gita wewnątrz katalogu z plikami, które chcesz śledzić, uruchom [`git init`](https://git-scm.com/docs/git-init).
 
@@ -61,12 +61,12 @@ $ git commit -m "Initial commit"
 
 Aby dowiedzieć się więcej o stanach plików, stagingu i związanych z nimi pojęciami, zajrzyj do przewodnika [Getting Started](https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F).
 
-Twój projekt może zawierać pliki, których nie chcesz commitować — np. pliki binarne lub tymczasowe. Do tego służy plik `.gitignore`, który jest listą plików/katalogów, jakie Git będzie pomijał przy poleceniu [`git add`](https://git-scm.com/docs/git-add).
+Twój projekt może zawierać pliki, których nie chcesz commitować --- np. pliki binarne lub tymczasowe. Do tego służy plik `.gitignore`, który jest listą plików/katalogów, jakie Git będzie pomijał przy poleceniu [`git add`](https://git-scm.com/docs/git-add).
 
 W Visual Studio otwórz `View -> Git Changes`. Zobaczysz tam listę wszystkich zmodyfikowanych plików.
 - Aby przygotować plik do commita, kliknij ikonę `+` obok jego nazwy.
-- Aby usunąć plik ze staging area, kliknij ikonę `–`.
-- Możesz też przygotować wszystkie pliki na raz: klikając `+` obok sekcji `Changes`, a cofnąć wszystko `–`.
+- Aby usunąć plik ze staging area, kliknij ikonę `--`.
+- Możesz też przygotować wszystkie pliki na raz: klikając `+` obok sekcji `Changes`, a cofnąć wszystko `--`.
 - Po zakończeniu stagingu wpisz wiadomość do commita i kliknij `Commit Staged`.
 
 ![Staging](/labs/lab01/img/staging.png)
@@ -83,8 +83,8 @@ Zanim zacznie rozwijać kolejne funkcje, chce upewnić się, że repozytorium je
 Gałęzie w Gicie są szczególnie przydatne podczas wprowadzania większych zmian, które mogą potencjalnie zepsuć działanie całego projektu. Możesz myśleć o gałęzi jako o migawce (równoległej kopii historii projektu), którą można modyfikować niezależnie.
 
 Podstawowy przykład to dwie gałęzie:
-- `main` – zawiera kod przetestowany i stabilny,
-- `dev` – służy do rozwijania nowych funkcji lub refaktoryzacji.
+- `main` -- zawiera kod przetestowany i stabilny,
+- `dev` -- służy do rozwijania nowych funkcji lub refaktoryzacji.
 
 ```mermaid
 ---
@@ -113,7 +113,7 @@ W Visual Studio otwórz `Git -> Manage Branches`.
 
 ![Branching](/labs/lab01/img/branches.png)
 
-Gałęzie są podstawą pracy zespołowej — każdy programista może pracować nad swoją izolowaną kopią kodu i dopiero po upewnieniu się, że wszystko działa poprawnie, wprowadzić zmiany do gałęzi `main`. O tym więcej w kolejnych sekcjach.
+Gałęzie są podstawą pracy zespołowej --- każdy programista może pracować nad swoją izolowaną kopią kodu i dopiero po upewnieniu się, że wszystko działa poprawnie, wprowadzić zmiany do gałęzi `main`. O tym więcej w kolejnych sekcjach.
 
 Z założenia Git blokuje przełączanie gałęzi, jeśli w katalogu roboczym masz niezacommitowane zmiany. Możesz je jednak tymczasowo „odłożyć na półkę” i wrócić do nich później bez wykonywania commita. Do tego służy polecenie [`git stash`](https://git-scm.com/docs/git-stash). Zapisuje ono bieżące zmiany w specjalnym schowku (stash) i usuwa je z katalogu roboczego (czyli przywraca kod gałęzi do stanu ostatniego commita).
 - Aby sprawdzić, jakie zmiany masz obecnie odłożone, użyj [`git stash list`](https://git-scm.com/docs/git-stash).
@@ -226,14 +226,14 @@ W Visual Studio otwórz `Git -> Manage Remotes...`.
 ![Remotes](/labs/lab01/img/remotes.png)
 
 ### Pobieranie i ściąganie zmian (Fetching and pulling)
-Ponieważ repozytoria zdalne są niezależne od Twojej lokalnej kopii, w międzyczasie mogą zajść w nich zmiany — np. ktoś doda nową gałąź, zrobi kilka commitów albo usunie pliki. W takiej sytuacji Twoje lokalne repozytorium może być w tyle względem zdalnego. Aby pobrać informacje o tych zmianach, użyj polecenia [`git fetch <remote>`](https://git-scm.com/docs/git-fetch).
+Ponieważ repozytoria zdalne są niezależne od Twojej lokalnej kopii, w międzyczasie mogą zajść w nich zmiany --- np. ktoś doda nową gałąź, zrobi kilka commitów albo usunie pliki. W takiej sytuacji Twoje lokalne repozytorium może być w tyle względem zdalnego. Aby pobrać informacje o tych zmianach, użyj polecenia [`git fetch <remote>`](https://git-scm.com/docs/git-fetch).
 **Uwaga: ta komenda nie aktualizuje kodu**, a jedynie pobiera obiekty Gita i referencje (np. nowe commity, gałęzie).
 Jeśli chcesz faktycznie uwzględnić te zmiany w swoim kodzie, użyj [`git pull <remote>`](https://git-scm.com/docs/git-pull).
 
 W Visual Studio otwórz `View -> Git Changes`.
 - Obok nazwy gałęzi zobaczysz kilka ikon:
-	- pierwsza (przerywana strzałka w dół): fetch – pobiera dane,
-	- druga (ciągła strzałka w dół): pull – pobiera i scala zmiany.
+	- pierwsza (przerywana strzałka w dół): fetch -- pobiera dane,
+	- druga (ciągła strzałka w dół): pull -- pobiera i scala zmiany.
 - Pod nazwą gałęzi widzisz też informację, ile nowych commitów (względem gałęzi śledzonej) jest dostępnych do pobrania.
 
 ![Fetch pull](/labs/lab01/img/fetchpull.png)
@@ -242,7 +242,7 @@ W Visual Studio otwórz `View -> Git Changes`.
 Kiedy chcesz udostępnić swój kod, musisz wypchnąć (push) go do odpowiedniej gałęzi w repozytorium zdalnym poprzez [`git push <remote> <branch>`](https://git-scm.com/docs/git-push). Przy pierwszym wysyłaniu zmian Git może poprosić Cię o ustawienie tzw. gałęzi śledzącej (upstream branch). Określa ona, z którą gałęzią zdalną Twoja lokalna gałąź będzie się domyślnie synchronizować. Więcej o gałęziach zdalnych przeczytasz [tutaj](https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches).
 
 W Visual Studio otwórz `View -> Git Changes`.
-- Trzecia ikona obok nazwy gałęzi (ciągła strzałka w górę) służy do push – wysyła lokalne zmiany do gałęzi śledzonej (upstream).
+- Trzecia ikona obok nazwy gałęzi (ciągła strzałka w górę) służy do push -- wysyła lokalne zmiany do gałęzi śledzonej (upstream).
 - Pod nazwą gałęzi wyświetlana jest również liczba commitów, które zostaną wysłane (względem gałęzi zdalnej).
 
 ![Push](/labs/lab01/img/push.png)
@@ -267,7 +267,7 @@ Git wstawia wtedy specjalne znaczniki w pliku:
  >>>>>>> origin/main
 ```
 
-Konflikty nie są błędami i są czymś całkowicie normalnym w większych projektach. Możesz traktować je jako sytuacje, w których Git wymaga Twojej decyzji. Konfliktów nie da się całkowicie uniknąć – trzeba je po prostu rozwiązać.
+Konflikty nie są błędami i są czymś całkowicie normalnym w większych projektach. Możesz traktować je jako sytuacje, w których Git wymaga Twojej decyzji. Konfliktów nie da się całkowicie uniknąć -- trzeba je po prostu rozwiązać.
 
 Jeśli korzystasz z IDE (np. Visual Studio), masz do dyspozycji wygodny interfejs do wyboru, które zmiany zachować. Jeśli korzystasz z prostego edytora albo terminala, konflikt rozwiązuje się ręcznie w trzech krokach:
 1. Usuń znaczniki konfliktu (`<<<<<<< HEAD`, `=======`, `>>>>>>> origin/main`).
